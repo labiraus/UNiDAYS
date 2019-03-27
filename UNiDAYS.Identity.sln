@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNiDAYS.Identity", "UNiDAYS.Identity\UNiDAYS.Identity.csproj", "{B776F43D-9F20-45C3-8DAC-38F04BD32B48}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "UNiDAYS.Sql", "UNiDAYS.Sql\UNiDAYS.Sql.sqlproj", "{6A25F85D-9905-4FD1-BE2E-6CD665B13BEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UNiDAYS.Test", "UNiDAYS.Test\UNiDAYS.Test.csproj", "{A8A404B7-5F2E-48CF-9616-46ABC20571CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,16 @@ Global
 		{B776F43D-9F20-45C3-8DAC-38F04BD32B48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B776F43D-9F20-45C3-8DAC-38F04BD32B48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B776F43D-9F20-45C3-8DAC-38F04BD32B48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A25F85D-9905-4FD1-BE2E-6CD665B13BEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A25F85D-9905-4FD1-BE2E-6CD665B13BEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A25F85D-9905-4FD1-BE2E-6CD665B13BEE}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{6A25F85D-9905-4FD1-BE2E-6CD665B13BEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A25F85D-9905-4FD1-BE2E-6CD665B13BEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A25F85D-9905-4FD1-BE2E-6CD665B13BEE}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A8A404B7-5F2E-48CF-9616-46ABC20571CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8A404B7-5F2E-48CF-9616-46ABC20571CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8A404B7-5F2E-48CF-9616-46ABC20571CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8A404B7-5F2E-48CF-9616-46ABC20571CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

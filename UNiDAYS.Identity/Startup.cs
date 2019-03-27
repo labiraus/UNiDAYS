@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using UNiDAYS.Identity.Models;
+using UNiDAYS.Identity.Repositories;
+using UNiDAYS.Identity.Stores;
 
 namespace UNiDAYS.Identity
 {
@@ -15,6 +14,16 @@ namespace UNiDAYS.Identity
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentityCore<UserModel>()
+                .AddUserStore<UserStore>()
+                .AddUserManager<UserManager<UserModel>>()
+                .AddSignInManager<SignInManager<UserModel>>();
+
+            services.AddTransient<IRepository<UserModel>, SqlRepository<UserModel>>();
+            services.AddTransient<ISqlTranslator<UserModel>, UserSqlTranslator>();
+            services.AddTransient<IMethodLookup, SqlMethodLookup>();
+
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -24,10 +33,13 @@ namespace UNiDAYS.Identity
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseStaticFiles();
 
-            app.Run(async (context) =>
+            app.UseMvc(routes =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Identity}/{action=Create}/{id?}");
             });
         }
     }
